@@ -1,0 +1,10 @@
+services:
+  apache:
+    image: ubuntu/apache2:latest
+    container_name: nimbusdocs_apache
+    ports:
+      - "8090:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./configuracion-virtualhosts:/etc/apache2/sites-available
+      - ./logs:/var/log/apache
